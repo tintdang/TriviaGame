@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
     <div class=container id="game">
 
         <div class="row">
@@ -29,11 +30,34 @@
                 <p>Time Remaining</p>
                 <p>00.00</p>
             </div>
-        </div> <!--End of result screen-->
+        </div>
+        <!--End of result screen-->
         <div id="startGame">
             <button id="startButton">Click Here to start the game!</button>
         </div>
 
+        <div class="row" id="questionBox">
+            <div class="col-md-6">
+                <img width="200px" src="https://www.placehold.it/200x200" alt="image here">
+            </div>
+            <div class="col-md-6">
+                <h1>?</h1>
+            </div>
+        </div>
+        <div class="row">
+            <span id="firstButton">
+                <button class="btn answer" id="A">A</button>
+            </span>
+            <span>
+                <button class="btn answer" id="B">B</button>
+            </span>
+            <span>
+                <button class="btn answer" id="C">C</button>
+            </span>
+            <span id="lastButton">
+                <button class="btn answer" id="D">D</button>
+            </span>
+        </div>
     </div>
 
     <script type="text/javascript" src="assets/javascript/app.js"></script>
