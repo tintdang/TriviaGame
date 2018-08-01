@@ -1,0 +1,21 @@
+* {
+    text-align: center;
+}
+
+.row {
+    background: lightgray;
+    border: 2px solid black;
+}
+
+#game {
+    margin-top: 20px;
+}
+
+h1 {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#startGame {
+    margin-top: 20px;
+}
