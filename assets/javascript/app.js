@@ -46,7 +46,7 @@ var timer = {
         if (timer.time == 0) {
             timedOut++;
             timer.stop();
-            $("#img").attr("src", "https://media.giphy.com/media/l378Aotu8uRBKYWHe/source.gif") //play this gif when they run out of time
+            $("#img").attr("src", "assets/images/time.gif") //play this gif when they run out of time
             answerTimer.start()
             //they timed out so do a timed out here
             questionNumber++
@@ -150,7 +150,7 @@ $(document).on("click", ".answer", function () {
     }
     else {
         incorrect++
-        // $("#img").attr("src", "https://media.giphy.com/media/fV2nYFD3akDuTUgVhy/source.mp4")
+        $("#img").attr("src", "assets/")
         timer.stop();
         answerTimer.start();
     }
