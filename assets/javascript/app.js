@@ -83,12 +83,23 @@ var answerTimer = {
     },
 }
 
+function reset() {
+    //reset stuff
+}
+
+
 function showQuestion(){
     if(questionNumber === trivia.length){
         //end the game please.
+        //fill out results
+        $("#correct").text("You got " + correct + " questions correct!");
+        $("#incorrect").text("You got " + incorrect + " questions incorrect!");
+        $("#timeOut").text("You timed out " + timedOut + " questions!");
         $("#questionBox").hide();
+        reset();
     }
     else{
+    $("#img").attr("src", "assets/images/thinking.gif")
     $("#question").text(trivia[questionNumber].question) //Shows current question
     renderAnswers(); // Shows the answers through function renderAnswers
     $("#question").show();
@@ -143,14 +154,14 @@ $(document).on("click", ".answer", function () {
 
     if (answer === correctAnswer){
         correct++
-        $("#img").attr("src", "https://media.giphy.com/media/OhFuOJn2rbLsA/source.gif")
+        $("#img").attr("src", "assets/images/correct.gif")
         timer.stop();
         answerTimer.start();
         
     }
     else {
         incorrect++
-        $("#img").attr("src", "assets/")
+        $("#img").attr("src", "assets/images/wrong.gif")
         timer.stop();
         answerTimer.start();
     }
