@@ -1,72 +1,59 @@
 //Variables here
-var trivia = [{
-    question: "How would you write 'blahblah' in jQuery",
-    choices: ["$('mov')", "$('vow')", "$(she)", "$('#clash')"],
-    answer: 4,
-},{
-    question: "How would you write 'blahblah' in jQuery",
-    choices: ["$('mov')", "$('vow')", "$(she)", "$('#clash')"],
-    answer: 4,
-},{
-    question: "How would you write 'blahblah' in jQuery",
-    choices: ["$('mov')", "$('vow')", "$(she)", "$('#clash')"],
-    answer: 4,
-},{
-    question: "How would you write 'blahblah' in jQuery",
-    choices: ["$('mov')", "$('vow')", "$(she)", "$('#clash')"],
-    answer: 4,
-},{
-    question: "How would you write 'blahblah' in jQuery",
-    choices: ["$('mov')", "$('vow')", "$(she)", "$('#clash')"],
-    answer: 4,
-},{
-    question: "How would you write 'blahblah' in jQuery",
-    choices: ["$('mov')", "$('vow')", "$(she)", "$('#clash')"],
-    answer: 4,
-},{
-    question: "How would you write 'blahblah' in jQuery",
-    choices: ["$('mov')", "$('vow')", "$(she)", "$('#clash')"],
-    answer: 4,
-},{
-    question: "How would you write 'blahblah' in jQuery",
-    choices: ["$('mov')", "$('vow')", "$(she)", "$('#clash')"],
-    answer: 4,
-}]
-
-var intervalId;
-
-//create timer
-var timer = {
-    time: 10,
-    reset: function(){
-        $("#timer").text(10);
-        time: 10;
+var trivia = {
+    question1: {
+        question: "How would you write 'blahblah' in jQuery",
+        choices: ["$('mov')", "$('vow')", "$(she)", "$('#clash')"],
+        answer: 4,
     },
-    start: function(){
-        intervalId = setInterval(timer.count, 1000);
-        if (time === 0){
-
-        }
+    question2: {
+        question: "How would you write 'blahblah' in jQuery",
+        choices: ["$('mov')", "$('vow')", "$(she)", "$('#clash')"],
+        answer: 4,
     },
-    stop: function(){
-        
-    },
-    countdown: function(){ //displays the 
-        var count = timer.time--;
-        $("timer").text(count)
+    question3: {
+        question: "How would you write 'blahblah' in jQuery",
+        choices: ["$('mov')", "$('vow')", "$(she)", "$('#clash')"],
+        answer: 4,
     }
-
 }
 
+var intervalId;
+    var clockRunning = false;
+
+    //create timer
+    var timer = {
+        time: 10,
+        reset: function () {
+            clearInterval(intervalId);
+            clockRunning = false
+            timer.time = 10;
+        },
+        start: function () {
+            if (!clockRunning) {
+                intervalId = setInterval(timer.countdown, 1000);
+                clockRunning = true;
+            };
+
+        },
+        countdown: function () { //displays the 
+            timer.time--;
+            $("#timer").text(timer.time)
+            if (timer.time == 0) {
+                timer.reset();
+            };
+        }
+
+    }
+
+$("#A").on("click", timer.start())
 
 
 
-
-//Functions here
-$("#results").hide();
+    //Functions here
+    $("#results").hide();
 
 //Starts the game with the button click
-$("#startButton").on("click", function(){
+$("#startButton").on("click", function () {
     $("#results").show();
     $("#startGame").hide();
 });
