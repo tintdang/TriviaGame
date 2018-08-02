@@ -25,9 +25,9 @@ var incorrect = 0;
 
 //create timer
 var timer = {
-    time: 8,
+    time: 4,
     reset: function () {
-        timer.time = 8;
+        timer.time = 4;
     },
     start: function () {
         if (!clockRunning) {
@@ -45,6 +45,7 @@ var timer = {
         $("#timer").text(timer.time)
         if (timer.time == 0) {
             timedOut++;
+            timer.stop();
             $("#img").attr("src", "https://media.giphy.com/media/l378Aotu8uRBKYWHe/source.gif") //play this gif when they run out of time
             answerTimer.start()
             //they timed out so do a timed out here
@@ -70,7 +71,6 @@ var answerTimer = {
     },
     countdown: function () { //displays the 
         answerTimer.time--;
-        $("#timer").text(answerTimer.time)
         if (answerTimer.time == 0) {
             //Run the next question
             timer.reset();
@@ -86,7 +86,7 @@ var answerTimer = {
 function showQuestion(){
     if(questionNumber === trivia.length){
         //end the game please.
-        $("#questionBox").hide
+        $("#questionBox").hide();
     }
     else{
     $("#question").text(trivia[questionNumber].question) //Shows current question
