@@ -14,50 +14,58 @@
 </head>
 
 <body>
+    <div id="gamebg">
+        <div class=container id="game">
 
-    <div class=container id="game">
+            <div class="row">
+                <h1>Coding Quiz!</h1>
+            </div>
+            <div class="row" id="results">
+                <div id="stats" class="col-md-6">
+                    <p id="correct"></p>
+                    <p id="incorrect"></p>
+                    <p id="timeOut"></p>
+                </div>
+                <div class="col-md-6">
+                    <div id="timerBox">
+                        <p>Time Remaining</p>
+                        <p id="timer">10</p>
+                    </div>
 
-        <div class="row">
-            <h1>Title</h1>
-        </div>
-        <div class="row" id="results">
-            <div class="col-md-6">
-                <p id="correct">Win</p>
-                <p id="incorrect">Loss</p>
-                <p id="timeOut">Timeout</p>
+                    <button id="playAgain" class="btn">Play Again?</button>
+
+                </div>
             </div>
-            <div class="col-md-6">
-                <p>Time Remaining</p>
-                <p id="timer">00.00</p>
+            <!--End of result screen-->
+
+
+            <div class="row" id="questionBox">
+                <div class="col-md-6">
+                    <h1 id="question">?</h1>
+                </div>
+                <div class="col-md-6">
+                    <img id="img" height="200px" src="https://www.placehold.it/200x200" alt="image here">
+                </div>
+            </div>
+            <div id="answerBox" class="row">
+                <span id="firstButton">
+                    <button id="A" class="btn answer" option="A">A</button>
+                </span>
+                <span>
+                    <button id="B" class="btn answer" option="B">B</button>
+                </span>
+                <span>
+                    <button id="C" class="btn answer" option="C">C</button>
+                </span>
+                <span id="lastButton">
+                    <button id="D" class="btn answer" option="D">D</button>
+                </span>
             </div>
         </div>
-        <!--End of result screen-->
         <div id="startGame">
-            <button id="startButton">Click Here to start the game!</button>
+            <button class="btn" id="startButton">Click Here to start the game!</button>
         </div>
 
-        <div class="row" id="questionBox">
-            <div class="col-md-6">
-                <img id="img" height="200px" src="https://www.placehold.it/200x200" alt="image here">
-            </div>
-            <div class="col-md-6">
-                <h1 id="question">?</h1>
-            </div>
-        </div>
-        <div id="answerBox" class="row">
-            <span id="firstButton">
-                <button id="A" class="btn answer" option="A">A</button>
-            </span>
-            <span>
-                <button id="B" class="btn answer" option="B">B</button>
-            </span>
-            <span>
-                <button id="C" class="btn answer" option="C">C</button>
-            </span>
-            <span id="lastButton">
-                <button id="D" class="btn answer" option="D">D</button>
-            </span>
-        </div>
     </div>
 
     <script type="text/javascript" src="assets/javascript/app.js"></script>
