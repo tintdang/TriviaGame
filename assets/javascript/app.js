@@ -21,7 +21,7 @@ var trivia = [
         choices: ["Arrays", "Strings", "Functions", "Variables"],
         answer: "A",
     }, {
-        question: "What jQuery method is used to insert concent at the END of a selected element?",
+        question: "What jQuery method is used to insert content at the END of a selected element?",
         choices: ["prepend()", "append()", "after()", "final()"],
         answer: "B",
     }, {
