@@ -88,3 +88,7 @@ span {
 .container{
     justify-content: center;
 }
+
+p{
+    font-size: 25px;
+}
