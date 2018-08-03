@@ -9,11 +9,43 @@ var trivia = [
         choices: [".", "!", "$", "?"],
         answer: "A",
     }, {
-        question: "How would you write 'blahblah' in jQuery",
-        choices: ["$('mov')", "$('vow')", "$(she)", "$('#clash')"],
+        question: "In HTML, how do you start a document?",
+        choices: ["[!DOCTYPE html]", "<$DOCTYPE html>", "<!DOCTYPE html>", "(!DOCTYPE html)"],
         answer: "C",
+    }, {
+        question: "What element in HTML contains the visible page content?",
+        choices: ["<head>", "<body>", "<html>", "<title>"],
+        answer: "B",
+    }, {
+        question: "In JavaScript, what element is used to store multiple values in a single variable?",
+        choices: ["Arrays", "Strings", "Functions", "Variables"],
+        answer: "A",
+    }, {
+        question: "What jQuery method is used to insert concent at the END of a selected element?",
+        choices: ["prepend()", "append()", "after()", "final()"],
+        answer: "B",
+    }, {
+        question: "In HTML, what tag is used to render or transform text into an important (bold) version?",
+        choices: ["<bold>", "<em>", "<a>", "<strong>"],
+        answer: "D",
+    }, {
+        question: "What tag is used to define a hyperlink, or link to another page?",
+        choices: ["<blockquote>", "<strong>", "<a>", "<i>"],
+        answer: "C",
+    }, {
+        question: "In JavaScript, what is a block of code called that is used to perform a specific task?",
+        choices: ["Function", "Declaration", "String", "Variable"],
+        answer: "A",
+    }, {
+        question: "Which jQuery method is used to hide selected elements",
+        choices: ["visible(false)", "display(none)", "hidden()", "hide()"],
+        answer: "D",
     }
 ]
+
+//shuffle the array
+trivia.sort(function(){return 0.5 - Math.random()});
+
 var questionNumber = 0;
 var intervalId;
 var clockRunning = false;
@@ -27,7 +59,8 @@ var incorrect = 0;
 var timer = {
     time: 10,
     reset: function () {
-        timer.time = 11;
+        timer.time = 10;
+        $("#timer").text(timer.time) // Sets the timer to refresh
     },
     start: function () {
         if (!clockRunning) {
@@ -75,11 +108,11 @@ var answerTimer = {
         answerTimer.time--;
         if (answerTimer.time == 0) {
             //Run the next question
-            timer.reset();
-            // $("#question").hide();
-            showQuestion();
+            timer.reset(); // resets the timer
+
+            showQuestion(); //Run the next question!
             answerTimer.stop();
-            answerTimer.time = 5;
+            answerTimer.time = 5; // resets timer
         }
     },
 }
@@ -90,6 +123,8 @@ function reset() {
     correct = 0;
     incorrect = 0;
     timedOut = 0;
+    // Shuffle it again
+    trivia.sort(function(){return 0.5 - Math.random()});
     $("#playAgain").hide(); // hide the button again
     $("#results").show();
     $("#timerBox").show();
@@ -139,9 +174,7 @@ function renderAnswers() { //This renders all the answer choices into the button
 
 
 
-// inside the question asking function and to look for when the game ends
-
-//Functions here
+//Hide the stuff i don't want to show
 $("#results").hide();
 $("#questionBox").hide();
 $("#answerBox").hide();
@@ -156,7 +189,7 @@ $("#startButton").on("click", function () {
     showQuestion();
 });
 
-//sets up answer buttons
+//sets up answer buttons to respond to clicks
 $(document).on("click", ".answer", function () {
     var answer = $(this).attr("option") //this calls the result of the answer
     var correctAnswer = trivia[questionNumber].answer
@@ -166,7 +199,7 @@ $(document).on("click", ".answer", function () {
     // clear question
     // $("#question").hide();
 
-    if (answer === correctAnswer) {
+    if (answer === correctAnswer) { //This checks if the answer is equal to the option attribute
         correct++ //iterate correct answers
         $("#img").attr("src", "assets/images/correct.gif") //correct gif
         $("#question").text("You're right!");
@@ -194,20 +227,4 @@ $(document).on("click", ".answer", function () {
 
 $(document).on("click", "#playAgain", function(){
     reset();
-}) //resets the game
-
-//Set up Question box
-
-
-//Set up answer box
-//Set up wrong answer
-//set up right answer
-
-
-//reveal questions right/ wrong/ timed out
-
-
-
-
-
-//Set up results at the end when they finish the trivia
+}) //resets the game on pressing play again
