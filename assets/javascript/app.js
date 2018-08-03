@@ -94,6 +94,7 @@ function reset() {
     $("#results").show();
     $("#timerBox").show();
     $("#questionBox").show();
+    $("#stats").hide();
     $("#correct, #incorrect, #timeOut").text("") //clear the results
     showQuestion();// Start again!
 }
@@ -103,6 +104,8 @@ function showQuestion() {
     if (questionNumber === trivia.length) {
         //end the game please.
         //fill out results
+        $("#stats").show();
+        $("results").show();
         $("#correct").text("You got " + correct + " questions correct!");
         $("#incorrect").text("You got " + incorrect + " questions incorrect!");
         $("#timeOut").text("You timed out on " + timedOut + " questions!");
@@ -143,13 +146,13 @@ $("#results").hide();
 $("#questionBox").hide();
 $("#answerBox").hide();
 $("#playAgain").hide(); // hide play again button
+$("#stats").hide();
 
 //Starts the game with the button click
 $("#startButton").on("click", function () {
     $("#results").show();
     $("#startGame").hide();
     $("#questionBox").show();
-    // timer.start();
     showQuestion();
 });
 
