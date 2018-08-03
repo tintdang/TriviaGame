@@ -57,7 +57,7 @@ var timer = {
     },
 
 }
-
+//This timer is made for the wait inbetween answers
 var answerTimer = {
     time: 5,
     start: function () {
@@ -125,7 +125,7 @@ function showQuestion() {
 }
 
 
-function renderAnswers() {
+function renderAnswers() { //This renders all the answer choices into the buttons
     $("#A").text(trivia[questionNumber].choices[0]);
     $("#B").text(trivia[questionNumber].choices[1]);
     $("#C").text(trivia[questionNumber].choices[2]);

@@ -83,3 +83,7 @@ span {
 #stats{
     padding:20px;
 }
+
+.container{
+    justify-content: center;
+}
