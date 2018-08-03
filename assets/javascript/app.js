@@ -128,7 +128,7 @@ function reset() {
     $("#playAgain").hide(); // hide the button again
     $("#results").show();
     $("#timerBox").show();
-    $("#questionBox").show();
+    $("#questionBox").show(500);
     $(".stats").hide();
     $("#correct, #incorrect, #timeOut").text("") //clear the results
     showQuestion();// Start again!
@@ -139,21 +139,21 @@ function showQuestion() {
     if (questionNumber === trivia.length) {
         //end the game please.
         //fill out results
-        $(".stats").show();
-        $("results").show();
+        $(".stats").show(500);
+        $("results").show(500);
         $("#correct").text("You got " + correct + " questions correct!");
         $("#incorrect").text("You got " + incorrect + " questions incorrect!");
         $("#timeOut").text("You timed out on " + timedOut + " questions!");
         $("#questionBox").hide();
         $("#timerBox").hide();
-        $("#playAgain").show(); //ask them to play again
+        $("#playAgain").show(500); //ask them to play again
     }
     else {
         $("#img").attr("src", "assets/images/thinking.gif")
         $("#question").text(trivia[questionNumber].question) //Shows current question
         renderAnswers(); // Shows the answers through function renderAnswers
-        $("#question").show();
-        $("#answerBox").show();
+        $("#question").show(500);
+        $("#answerBox").show(500);
         timer.start();
         // questionNumber++
         // if they selected the right answer, reset interval and select 
@@ -183,9 +183,9 @@ $(".stats").hide();
 
 //Starts the game with the button click
 $("#startButton").on("click", function () {
-    $("#results").show();
+    $("#results").show(200);
     $("#startGame").hide();
-    $("#questionBox").show();
+    $("#questionBox").show(500);
     showQuestion();
 });
 
