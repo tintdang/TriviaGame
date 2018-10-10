@@ -1,4 +1,5 @@
 # Trivia Game
+A trivia quiz on coding questions!
 
 ## Example
 <img src='./assets/images/example.png'><br>
