@@ -1,14 +1,40 @@
-# TriviaGame
-* You'll create a trivia game that shows only one question until the player answers it or their time runs out.
+# Trivia Game
 
-* If the player selects the correct answer, show a screen congratulating them for choosing the right option. After a few seconds, display the next question -- do this without user input.
+## Example
+<img src='./assets/images/example.png'><br>
+[Click here to start playing](https://tintdang.github.io/coding-quiz/)
 
-* The scenario is similar for wrong answers and time-outs.
+## Getting Started
+```
+git clone git@github.com:tintdang/coding-quiz.git
+open index.html in your favorite browser
+```
 
-  * If the player runs out of time, tell the player that time's up and display the correct answer. Wait a few seconds, then show the next question.
-  * If the player chooses the wrong answer, tell the player they selected the wrong option and then display the correct answer. Wait a few seconds, then show the next question.
+## Instructions
 
-* On the final screen, show the number of correct answers, incorrect answers, and an option to restart the game (without reloading the page).
+* This is a trivia game that will show one question until the player answers it or the timer runs out.
+* These questions are related to coding
+* The game will have 10 questions for the user to answer
+* On the final screen, it will show how many correct answers, incorrect answers, and timed out answers that the user has made, and an option to restart the game.
+
+## Features
+* The quiz questions will always be in a random order
+
+
+ ## Built With
+- HTML & CSS
+- Javascript
+- [Bootstrap](https://getbootstrap.com/)
+- [jQuery](https://jquery.com/download/)
+
+## Author
+
+* **Tin Dang**  - [tintdang](https://github.com/tintdang)
+
+## Acknowledgments
+
+* Thanks to The Coding Boot Camp at UT Austin
+
 
 ## Addtional comments
 - [ ] Set randomized array as its own variable
